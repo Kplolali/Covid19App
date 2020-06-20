@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
-import ProfileModal from './profileModal';
 import Modal from 'react-native-modalbox'
+
+import ProfileModal from './profileModal';
+import NotificationModalCard from './notificationModalCard'
 
 const { height, width } = Dimensions.get('window')
 
@@ -36,7 +38,11 @@ export default function header(){
                     swipeToClose={true}
                     style={{height:height*0.9, backgroundColor:'white', borderRadius:20}}
                   >
-                     <Text style={{textAlign:'center', fontSize:20}} >Testing Notification</Text>
+                     <Text style={{textAlign:'center', fontSize:20, fontWeight:"bold"}} >Notifications</Text>
+                     <NotificationModalCard 
+                     main="stay at home"
+                     text="2 days ago"
+                     />
                   </Modal>
                 </TouchableOpacity>
                 
