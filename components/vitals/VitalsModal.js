@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, Text , Modal, StyleSheet} from 'react-native';
+import { View, Text , Modal, StyleSheet, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 import { Ionicons } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-
 
 const VitalsModal = ({openModal, closeModal}) => {
     return (

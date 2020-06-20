@@ -1,8 +1,7 @@
 import React from 'react'
-import { View, Text, Modal, StyleSheet, Button } from 'react-native';
+import { View, Text, Modal, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 import { Ionicons } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const ProfileModal = ({openModal,closeModal}) => {
     return (
@@ -11,9 +10,8 @@ const ProfileModal = ({openModal,closeModal}) => {
                <View style={{flexDirection:"row", justifyContent:"space-between"}}>
                     <Text style={styles.headerTitle}>Profile</Text>
                     <TouchableOpacity onPress={closeModal} >
-                      <Ionicons name='ios-close' size={28} />
+                      <Ionicons name='ios-close' size={28}/>
                     </TouchableOpacity>   
-                    <Button title='Close' onPress={closeModal} />
                </View>
            </View>
         </Modal>

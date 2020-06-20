@@ -1,8 +1,8 @@
 import React from 'react'
-import { View, Text,Modal , StyleSheet, Button} from 'react-native'
+import { View, Text,Modal , StyleSheet, TouchableOpacity } from 'react-native'
 import Constants from 'expo-constants'
 import { Ionicons } from '@expo/vector-icons'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+
 
 const FAQModal = ({showModal, closeModal}) => {
     return (
@@ -13,7 +13,7 @@ const FAQModal = ({showModal, closeModal}) => {
                 <TouchableOpacity onPress={closeModal}>
                     <Ionicons name='ios-close' size={28} />
                 </TouchableOpacity>
-               <Button title="Close me" onPress={closeModal} />
+
             </View>
          </View>
         </Modal>

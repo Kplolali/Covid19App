@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, Text, Modal, StyleSheet, Button } from 'react-native';
+import { View, Text, Modal, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 import { Ionicons } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const MakeReportModal = ({openModal, closeModal}) => {
     return (
@@ -13,7 +12,6 @@ const MakeReportModal = ({openModal, closeModal}) => {
                    <TouchableOpacity onPress={closeModal}>
                        <Ionicons name='ios-close' size={28} />
                    </TouchableOpacity>
-                   <Button title='close' onPress={closeModal} />
                 </View>
             </View>
         </Modal>
