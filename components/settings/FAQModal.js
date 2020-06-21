@@ -3,6 +3,7 @@ import { View, Text,Modal , StyleSheet, TouchableOpacity } from 'react-native'
 import Constants from 'expo-constants'
 import { Ionicons } from '@expo/vector-icons'
 
+import FAQComponent from './faq'
 
 const FAQModal = ({showModal, closeModal}) => {
     return (
@@ -16,6 +17,7 @@ const FAQModal = ({showModal, closeModal}) => {
 
             </View>
          </View>
+         <FAQComponent />
         </Modal>
     )
 }
