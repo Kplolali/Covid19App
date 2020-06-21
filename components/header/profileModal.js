@@ -14,7 +14,7 @@ const ProfileModal = ({openModal,closeModal}) => {
                       <Ionicons name='ios-close' size={28}/>
                     </TouchableOpacity>   
                </View>
-               <View  style={{}}>
+               <View>
                    <Text style={styles.title}>Profile Details</Text>
                    <Text style={{paddingTop:20, paddingBottom:10}}>Enter Age</Text>
                    <TextInput 
