@@ -1,13 +1,22 @@
-import React,{useState} from 'react';
+import React,{ useState, useContext } from 'react';
 import { View, Text,  StyleSheet, TextInput,TouchableOpacity } from 'react-native';
+import Lottie from 'lottie-react-native'
+import Constants from 'expo-constants';
 import { Ionicons } from '@expo/vector-icons';
+import { GlobalContext } from '../../states/states';
+import { useIsFocused } from '@react-navigation/native';
+import { width, height} from '../../constants/constants';
+import colors from '../../constants/colors';
 
 import Header from '../../components/header/header'
 import MakeReportModal from '../../components/report/MakeReportModal';
+import CaseReports from '../../components/report/caseReport';
+import load from '../../assets/lottie/reports.json'
 
 export default function ReportScreen({navigation}){
-
     const [openModal, setopenModal] = useState(false);
+    const { reports } = useContext(GlobalContext);
+    const isFocused = useIsFocused();
 
     function handleOpenModal(){
         setopenModal(true)
@@ -22,15 +31,42 @@ export default function ReportScreen({navigation}){
             <View style={styles.headerView}>
                 <Text style={styles.headerText}>Case Report</Text>
             </View>
-            <View style={{justifyContent:"center", alignItems:"center", marginTop:"50%"}}>
-                <Text>You don't have any case reports </Text>
-            </View>
-            <TouchableOpacity onPress={handleOpenModal} style={{alignItems:'center', justifyContent:"center"}} >
-                    <View style={styles.submitCode} >
-                        <Text>Make Case Reports</Text>
+            {/* Check Report Items */}
+            {reports.length > 0 ? (
+                <View>
+                {reports.map(report => (
+                    <View>
+                    <CaseReports key={report.id}   {...report} />
                     </View>
-                    <MakeReportModal openModal={openModal} closeModal={handleCloseModal} />
-            </TouchableOpacity>   
+                ))}
+                </View>
+            
+            ) : (
+                <Text />
+            )}
+              {/* Check if report is empty*/}
+            {reports.length <= 0 ? (
+                <View>
+                    <Lottie
+                        source= { load } 
+                        autoPlay 
+                        loop
+                        style={{alignItems:"center", width:70, height:140, marginLeft:25, marginVertical:15, marginBottom:"20%"}}
+                        />
+                    <View style={{justifyContent:"center", alignItems:"center"}}>
+                    <Text>You don't have any case reports </Text>
+                    </View>
+                    <TouchableOpacity onPress={handleOpenModal} style={{alignItems:'center', justifyContent:"center"}} >
+                            <View style={styles.submitCode} >
+                                <Text>Make Case Reports</Text>
+                            </View>
+                            <MakeReportModal openModal={openModal} closeModal={handleCloseModal} />
+                    </TouchableOpacity> 
+                </View>
+            
+                  ) : (
+                    <Text />
+                  )}  
         </View>
     )
 }

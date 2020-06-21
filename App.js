@@ -12,6 +12,7 @@ import ApolloClient from 'apollo-boost'
 import Cover from './screens/covers'
 import Verification from './screens/verification'
 import Information from './screens/generalInformation'
+import { GlobalProvider } from './states/states';
 
 //tab imports 
 import Home from './screens/navigationScreens/HomeScreen';
@@ -76,24 +77,27 @@ export default function App(){
   })
   return(
     <ApolloProvider client={client}>
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Cover" component={Cover} 
-        options={{headerShown: false}}
-        />
-        <Stack.Screen name="Verification" component={Verification} 
-        options={{headerShown: false}}
-        />
-        <Stack.Screen name="General Information" component={Information} 
-        options={{ headerShown: false}}
-        />
-        <Stack.Screen name="Home" component={MainSectionTab} 
-          options={{
-            headerShown: false
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <GlobalProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Cover" component={Cover} 
+          options={{headerShown: false}}
+          />
+          <Stack.Screen name="Verification" component={Verification} 
+          options={{headerShown: false}}
+          />
+          <Stack.Screen name="General Information" component={Information} 
+          options={{ headerShown: false}}
+          />
+          <Stack.Screen name="Home" component={MainSectionTab} 
+            options={{
+              headerShown: false
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </GlobalProvider>
+    
     </ApolloProvider>
   )
 }

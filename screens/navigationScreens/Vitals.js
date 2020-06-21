@@ -1,9 +1,11 @@
 import React,{useState} from 'react';
 import { View, Text,  StyleSheet, TextInput,TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import Lottie from 'lottie-react-native'
 
 import Header from '../../components/header/header'
 import VitalsModal from '../../components/vitals/VitalsModal';
+import load from '../../assets/lottie/heart-cardio.json'
 
 export default function VitalsScreen({navigation}){
 
@@ -19,18 +21,27 @@ export default function VitalsScreen({navigation}){
     return(
         <View style={styles.container}>
             <Header />
-            <View style={styles.headerView}>
-                <Text style={styles.headerText}>Vitals</Text>
-            </View>
-            <View style={{justifyContent:"center", alignItems:"center", marginTop:"50%"}}>
-                <Text>You have not logged your vitals yet</Text>
-            </View>
-            <TouchableOpacity onPress={handleOpenModal} style={{alignItems:'center', justifyContent:"center"}} >
-                    <View style={styles.submitCode} >
-                        <Text>Log Vitals</Text>
-                    </View>
-                    <VitalsModal openModal={openModal} closeModal={handleCloseModal} />
+            <View>
+                <View style={styles.headerView}>
+                    <Text style={styles.headerText}>Vitals</Text>
+                </View>
+                <Lottie
+                source= { load } 
+                autoPlay 
+                loop
+                style={{alignItems:"center", width:70, height:140, marginLeft:25, marginVertical:15, marginBottom:"20%"}}
+                />
+                <View style={{justifyContent:"center", alignItems:"center"}}>
+                    <Text>You have not logged your vitals yet</Text>
+                </View>
+                <TouchableOpacity onPress={handleOpenModal} style={{alignItems:'center', justifyContent:"center"}} >
+                        <View style={styles.submitCode} >
+                            <Text>Log Vitals</Text>
+                        </View>
+                        <VitalsModal openModal={openModal} closeModal={handleCloseModal} />
             </TouchableOpacity>
+            </View>
+            
             
         </View>
     )
