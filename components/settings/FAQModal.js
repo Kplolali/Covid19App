@@ -14,7 +14,6 @@ const FAQModal = ({showModal, closeModal}) => {
                 <TouchableOpacity onPress={closeModal}>
                     <Ionicons name='ios-close' size={28} />
                 </TouchableOpacity>
-
             </View>
          </View>
          <FAQComponent />

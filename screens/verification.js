@@ -16,7 +16,7 @@ export default function Verification({navigation}){
                 <Text style={{padding: 5,}}>Change Phone</Text>
             </View>
             <View style={styles.verifyView}>
-                <Text style={{fontWeight:"bold", marginBottom:20}}>Verification PIN</Text>
+                <Text style={{fontWeight:"bold", marginBottom:20, fontSize:16}}>Verification PIN</Text>
                 <Text style={{textAlign:"center"}}>{"Enter the verification code \n we just sent on \n "}</Text>
                 <TextInput placeholder='Code'/>
             </View>
@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
     verifyView:{
         alignItems:"center",
         justifyContent:'center',
-        marginTop: "55%"
+        marginTop: 160,
+        marginBottom: 200
     },
     submitCode:{
         display: "flex", 
@@ -54,6 +55,7 @@ const styles = StyleSheet.create({
         height: 55, 
         width: 225,
         backgroundColor: "#000000", 
+        marginTop: 150,
         marginVertical: 20,
         
     },
