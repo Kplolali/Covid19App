@@ -12,13 +12,13 @@ const MakeReportModal = ({openModal, closeModal, navigation}) => {
     const [landMark, setLandMark] = useState('');
     const [contact, setContact] = useState('');
     const [description, setDescription] = useState('');
+    const [selected, setSelected] = useState(false);
   
     const { makeCaseReport } = useContext(GlobalContext);
     // Radio Button data
     //const rbData = [{ label: 'Self' }, { label: 'Other Individual' }];
   
-    let date = new Date()
-    
+    let date = new Date()  
     function submitReport() {
       setLoad(true);
       setTimeout(() => {
@@ -52,13 +52,13 @@ const MakeReportModal = ({openModal, closeModal, navigation}) => {
                    <View style={styles.View}>
                     <View style={{flexDirection:"row",  paddingRight:35}}>
                         <TouchableOpacity>
-                            <Ionicons name="ios-checkmark-circle" size={21} />
+                            <Ionicons color="#e3e3e3" name="ios-checkmark-circle" size={21} />
                         </TouchableOpacity>
                         <Text style={{paddingLeft:5}}>Self</Text>
                     </View>
                     <View style={{flexDirection:"row"}}>
                         <TouchableOpacity>
-                            <Ionicons name="ios-checkmark-circle" size={21} />
+                                <Ionicons color="#e3e3e3" name="ios-checkmark-circle" size={21} />    
                         </TouchableOpacity>
                         <Text style={{paddingLeft:5}}>Other Individual</Text>
                     </View>

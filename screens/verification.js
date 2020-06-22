@@ -1,9 +1,28 @@
-import React from 'react';
-import { View, Text,  StyleSheet, TextInput,TouchableOpacity } from 'react-native';
+import React, { useState }from 'react';
+import { View, Text,  StyleSheet, TextInput,TouchableOpacity, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 
 export default function Verification({navigation}){
+    const [code, setCode] = useState("");
+    const [load, setLoad] = useState(false);
+
+    function submitCode() {
+        setLoad(true);
+        setTimeout(() => {
+          setLoad(false);
+          if (code == "12345") {
+            navigation.navigate('General Information')
+          }
+          else {    
+            Alert.alert('Wrong Code', 'Check the code or your number', [
+                { text: 'OK', onPress: () => console.log('OK Pressed') },
+            ]);
+          }
+
+        }, 2000);
+      }
+
     return(
         <View style={styles.container}>
             <View style={{flexDirection:"row"}}> 
@@ -18,11 +37,13 @@ export default function Verification({navigation}){
             <View style={styles.verifyView}>
                 <Text style={{fontWeight:"bold", marginBottom:20, fontSize:16}}>Verification PIN</Text>
                 <Text style={{textAlign:"center"}}>{"Enter the verification code \n we just sent on \n "}</Text>
-                <TextInput placeholder='Code'/>
+                <TextInput 
+                value={code}
+                onChangeText={code => setCode(code)}
+                placeholder='Code'/>
             </View>
 
-            <TouchableOpacity style={{alignItems:'center', justifyContent:"center"}} onPress={()=>{
-               navigation.navigate('General Information')}}>
+            <TouchableOpacity style={{alignItems:'center', justifyContent:"center"}} onPress={submitCode}>
                 <View style={styles.submitCode} >
                     <Text style={{color: "#fff"}} >Submit code</Text>
                 </View>
