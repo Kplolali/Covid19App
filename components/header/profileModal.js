@@ -60,7 +60,7 @@ const ProfileModal = ({openModal,closeModal}) => {
                </View>
                <View>
                    <Text style={styles.title}>Profile Details</Text>
-                   <Text style={{paddingTop:20, paddingBottom:10}}>Enter Age</Text>
+                   <Text style={{paddingTop:20, paddingBottom:10, fontFamily: 'Georgia',}}>Enter Age</Text>
                    <TextInput 
                    placeholder="Age"
                    keyboardType="number-pad"
@@ -70,6 +70,7 @@ const ProfileModal = ({openModal,closeModal}) => {
                        borderWidth:StyleSheet.hairlineWidth, 
                        borderColor:"#e3e3e3",
                        padding:5,
+                       fontFamily:"Georgia"
                     }}/>
                </View>
                {/* Radio buttons */}
@@ -95,7 +96,7 @@ const ProfileModal = ({openModal,closeModal}) => {
             </View>
                <View>
                     <Text style={styles.title}>Travel History</Text>
-                    <Text>Select the last two countries you visited(If Applicable)</Text>
+                    <Text style={{fontFamily:"Georgia"}}>Select the last two countries you visited(If Applicable)</Text>
                     <View style={styles.countryContainer}>
                 {/* Pick first country */}
                 <View style={styles.selectCountry}>
@@ -141,21 +142,22 @@ const ProfileModal = ({openModal,closeModal}) => {
                 </View>
                 <View style={{paddingBottom:20}}>
                     <Text style={styles.title}>Medical Professional Information</Text>
-                    <Text>Applicable if you are a health worker</Text>
-                    <Text style={{paddingTop:20, paddingBottom:10}}>Health Licence Number</Text>
+                    <Text style={{fontFamily:"Georgia"}}>Applicable if you are a health worker</Text>
+                    <Text style={{paddingTop:20, paddingBottom:10, fontFamily:"Georgia"}}>Health Licence Number</Text>
                    <TextInput 
                    style={{
                        height:50,
                        borderWidth:StyleSheet.hairlineWidth, 
                        borderColor:"#e3e3e3",
                        padding:5,
+                       fontFamily:"Georgia"
                     }}/>
                 </View>
                 <TouchableOpacity onPress={updateProfile} style={styles.button}>
               {load ? (
                 <ActivityIndicator />
               ) : (
-                <Text style={([styles.mainText], { color: colors.white })}>
+                <Text style={([styles.mainText], { color: colors.white, fontFamily:"Georgia" })}>
                   Update Profile
                 </Text>
               )}
@@ -176,11 +178,18 @@ const styles = StyleSheet.create({
     },
     headerTitle:{
         fontSize:34,
-        fontWeight:'bold'
+        fontWeight:'bold',
+        fontFamily:"Georgia"
+    },
+    mainText: {
+      fontFamily: 'Georgia',
+      letterSpacing: -0.2,
+      color: colors.grey,
     },
     title:{
         fontWeight:"bold",
-        paddingTop:20
+        paddingTop:20,
+        fontFamily:"Georgia"
     },
     View:{
         flexDirection:"row", 

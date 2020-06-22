@@ -61,7 +61,8 @@ const styles = StyleSheet.create({
     },
     headerTitle:{
         fontSize:30,
-        fontWeight:'bold'
+        fontWeight:'bold',
+        fontFamily:"Georgia"
     },
     title:{
         fontWeight:"bold",

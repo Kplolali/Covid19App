@@ -38,7 +38,7 @@ export default function header(){
                     swipeToClose={true}
                     style={{height:height*0.9, backgroundColor:'white', borderRadius:20}}
                   >
-                     <Text style={{textAlign:'center', fontSize:20, fontWeight:"bold"}} >Notifications</Text>
+                     <Text style={{textAlign:'center', fontSize:20, fontWeight:"bold",fontFamily: 'Georgia',paddingHorizontal:15, paddingVertical:15}} >Notifications</Text>
                      <NotificationModalCard 
                      main="stay at home"
                      text="2 days ago"

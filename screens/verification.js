@@ -32,25 +32,26 @@ export default function Verification({navigation}){
                 onPress={()=>{
                     navigation.navigate('Cover')}}
                 />
-                <Text style={{padding: 5,}}>Change Phone</Text>
+                <Text style={{padding: 5,fontFamily:"Georgia"}}>Change Phone</Text>
             </View>
             <View style={styles.verifyView}>
-                <Text style={{fontWeight:"bold", marginBottom:20, fontSize:16}}>Verification PIN</Text>
-                <Text style={{textAlign:"center"}}>{"Enter the verification code \n we just sent on \n "}</Text>
+                <Text style={{fontWeight:"bold", marginBottom:20, fontSize:16,fontFamily:"Georgia"}}>Verification PIN</Text>
+                <Text style={{textAlign:"center",fontFamily:"Georgia"}}>{"Enter the verification code \n we just sent on \n "}</Text>
                 <TextInput 
                 value={code}
                 onChangeText={code => setCode(code)}
-                placeholder='Code'/>
+                placeholder='Code'
+                style={{fontFamily:"Georgia"}}/>
             </View>
 
             <TouchableOpacity style={{alignItems:'center', justifyContent:"center"}} onPress={submitCode}>
                 <View style={styles.submitCode} >
-                    <Text style={{color: "#fff"}} >Submit code</Text>
+                    <Text style={{color: "#fff",fontFamily:"Georgia"}} >Submit code</Text>
                 </View>
             </TouchableOpacity>
             <View >
-                <Text style={{textAlign:'center'}}>Have you not received your code?</Text>
-                <Text style={{textAlign:'center', paddingTop:15}}>Resend Code</Text>
+                <Text style={{textAlign:'center',fontFamily:"Georgia"}}>Have you not received your code?</Text>
+                <Text style={{textAlign:'center', paddingTop:15,fontFamily:"Georgia"}}>Resend Code</Text>
             </View>
 
         </View>

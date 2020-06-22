@@ -136,7 +136,8 @@ const styles = StyleSheet.create({
     },
     headerText:{
         fontWeight:'bold', 
-        fontSize:30
+        fontSize:30,
+        fontFamily: 'Georgia',
     },
     headerView:{
          
@@ -168,12 +169,14 @@ const styles = StyleSheet.create({
     mainText:{
         letterSpacing:-0.2,
         fontSize:18,
-        fontWeight:'bold'
+        fontWeight:'bold',
+        fontFamily: 'Georgia',
     },
     subText:{
         fontWeight:"bold",
         fontSize:14,
         color:'grey',
-        letterSpacing:-0.2
+        letterSpacing:-0.2,
+        fontFamily: 'Georgia',
     }
   });

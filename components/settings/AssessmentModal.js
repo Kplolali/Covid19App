@@ -50,7 +50,7 @@ export default function AssessmentModal({ closeModal, showModal }) {
         </View>
         <View style={{ marginTop: height * 0.34 }}>
           <TouchableOpacity style={styles.button}>
-            <Text style={([styles.mainTitle], { color: colors.white })}>
+            <Text style={([styles.mainTitle], { color: colors.white, fontFamily:"Georgia" })}>
               Start Assessment...
             </Text>
           </TouchableOpacity>
@@ -74,13 +74,16 @@ const styles = StyleSheet.create({
   headerTitle: {
     letterSpacing: -0.2,
     fontSize: font_sizes.h1,
+    fontFamily:"Georgia"
   },
   mainTitle: {
     letterSpacing: -0.5,
     fontSize: font_sizes.t3,
+    fontFamily:"Georgia"
   },
   mainText: {
     letterSpacing: -0.1,
+    fontFamily:"Georgia"
   },
   button: {
     height: 53,

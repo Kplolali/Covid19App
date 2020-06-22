@@ -107,7 +107,7 @@ export default function LogSymptoms() {
         {load ? (
         <ActivityIndicator color="black" />
         ):(
-          <Text style={([styles.description], { color: 'white' })}>
+          <Text style={([styles.description], { color: 'white', fontFamily:"Georgia"})}>
                 Log Vitals
           </Text>
           )}
@@ -152,15 +152,18 @@ const styles = StyleSheet.create({
   },
   mainTitle: {
     letterSpacing: -0.5,
+    fontFamily:"Georgia"
   },
   number: {
     letterSpacing: -0.4,
     fontSize: 16,
+    fontFamily:"Georgia"
   },
   selectedNumber: {
     letterSpacing: -0.4,
     fontSize: 16,
     color: 'white',
+    fontFamily:"Georgia"
   },
   button: {
     backgroundColor: '#738096',
@@ -172,5 +175,6 @@ const styles = StyleSheet.create({
   description: {
     letterSpacing: -0.4,
     color: 'grey',
+    fontFamily:"Georgia"
   },
 });

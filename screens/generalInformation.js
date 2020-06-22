@@ -10,21 +10,21 @@ export default function generalInformation({navigation}){
         <View style={styles.container}>
            <View style={{borderBottomWidth:StyleSheet.hairlineWidth}}>
                 <View style={{paddingVertical:15,}}>
-                    <Text style={{fontSize:34, fontWeight:'bold'}}>General Information</Text>
+                    <Text style={{fontSize:34, fontWeight:'bold',fontFamily:"Georgia"}}>General Information</Text>
                 </View>
            </View>
            <ScrollView>
            {GeneralInfoData.map(data => (
                <View key={data.id} style={{marginVertical:15}}>
-                 <Text style={{fontSize:16, fontWeight:'bold', letterSpacing:-0.2}}>{data.title}</Text>
-                 <Text>{data.info}</Text>
+                 <Text style={{fontSize:16, fontWeight:'bold', letterSpacing:-0.2,fontFamily:"Georgia"}}>{data.title}</Text>
+                 <Text style={{fontFamily:"Georgia"}}>{data.info}</Text>
                </View>
            ))}
            </ScrollView>
             <TouchableOpacity style={{alignItems:'center', justifyContent:"center"}} onPress={()=>{
                 navigation.navigate('Home')}}>
                     <View style={styles.submitCode} >
-                        <Text style={{color: "#fff"}} >Let's Get started..</Text>
+                        <Text style={{color: "#fff",fontFamily:"Georgia"}} >Let's Get started..</Text>
                     </View>
             </TouchableOpacity>
 

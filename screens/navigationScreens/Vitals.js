@@ -46,11 +46,11 @@ export default function VitalsScreen({navigation}){
                     style={{alignItems:"center", width:70, height:140, marginLeft:25, marginVertical:15, marginBottom:"20%"}}
                     />
                     <View style={{justifyContent:"center", alignItems:"center"}}>
-                        <Text>You have not logged your vitals yet</Text>
+                        <Text style={{fontFamily:"Georgia"}}>You have not logged your vitals yet</Text>
                     </View>
                     <TouchableOpacity onPress={handleOpenModal} style={{alignItems:'center', justifyContent:"center"}} >
                             <View style={styles.submitCode} >
-                                <Text>Log Vitals</Text>
+                                <Text style={{fontFamily:"Georgia"}}>Log Vitals</Text>
                             </View>
                             <VitalsModal openModal={openModal} closeModal={handleCloseModal} />
                     </TouchableOpacity>
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
     },
     headerText:{
         fontWeight:'bold', 
-        fontSize:30
+        fontSize:30,
+        fontFamily:"Georgia"
     },
     headerView:{
          

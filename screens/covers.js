@@ -38,19 +38,19 @@ export default function covers({navigation}) {
                             />
                         </View>
                         <View style={styles.phoneView}>
-                            <Text>Phone Number</Text>
+                            <Text style={{fontFamily:"Georgia"}}>Phone Number</Text>
                         </View>
                     </View>
                     {phone.length < 10 ? (
                         <View style={styles.getStartedInactive}>
-                             <Text style={{color: "#fff"}} >Get Started</Text>
+                             <Text style={{color: "#fff",fontFamily:"Georgia"}} >Get Started</Text>
                         </View>   
                     ):(
                         <TouchableOpacity style={styles.getStartedActive}  onPress={handleButton}>
                             {loading ? (
                                 <ActivityIndicator color="#fff" />
                             ):(
-                                <Text style={{color: "#fff"}} >Get Started</Text>
+                                <Text style={{color: "#fff", fontFamily:"Georgia"}} >Get Started</Text>
                             )}
                            
                       </TouchableOpacity>
@@ -73,12 +73,13 @@ const styles = StyleSheet.create({
     text:{
         color:"white", 
         textAlign:'center',
+        fontFamily:"Georgia"
 
     },
     cover:{
         color:"white",
         fontSize:60,
-        fontWeight:"bold"
+        fontFamily:"Georgia-Bold"
     },
     getStartedInactive:{
         display: "flex", 
@@ -109,7 +110,8 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff", 
         height: 50, 
         width: 220, 
-        padding: 10
+        padding: 10,
+        fontFamily:"Georgia"
     },
     textInputView:{
         display: "flex", 

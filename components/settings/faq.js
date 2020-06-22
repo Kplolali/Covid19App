@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: font_sizes.t3,
     letterSpacing: -0.8,
+    fontFamily:"Georgia"
   },
   content: {
     paddingHorizontal: 20,
@@ -90,5 +91,6 @@ const styles = StyleSheet.create({
   },
   contentText: {
     fontSize: font_sizes.t4,
+    fontFamily:"Georgia"
   },
 });

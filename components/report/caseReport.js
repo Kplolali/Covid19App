@@ -97,14 +97,17 @@ const styles = StyleSheet.create({
   mainText: {
     letterSpacing: -0.6,
     color: colors.grey,
+    fontFamily:"Georgia"
   },
   mainTitle: {
     letterSpacing: -0.6,
     fontSize: font_sizes.t3,
+    fontFamily:"Georgia"
   },
   book: {
     letterSpacing: -0.3,
     fontSize: font_sizes.t4,
+    fontFamily:"Georgia"
   },
   deleteItem: {
     backgroundColor: 'red',

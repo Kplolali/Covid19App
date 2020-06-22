@@ -10,9 +10,9 @@ const FAQModal = ({showModal, closeModal}) => {
         <Modal visible={showModal} presentationStyle='pageSheet' animationType='fade' >
            <View style={styles.container}>
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-                <Text style={{fontSize:34, fontWeight:'bold'}}>FAQs</Text>
+                <Text style={{fontSize:34, fontWeight:'bold',fontFamily:"Georgia"}}>FAQs</Text>
                 <TouchableOpacity onPress={closeModal}>
-                    <Ionicons name='ios-close' size={28} />
+                    <Ionicons name='ios-close' size={40} />
                 </TouchableOpacity>
             </View>
          </View>

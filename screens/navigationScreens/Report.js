@@ -54,11 +54,11 @@ export default function ReportScreen({navigation}){
                         style={{alignItems:"center", width:70, height:140, marginLeft:25, marginVertical:15, marginBottom:"20%"}}
                         />
                     <View style={{justifyContent:"center", alignItems:"center"}}>
-                    <Text>You don't have any case reports </Text>
+                    <Text style={{fontFamily:"Georgia"}}>You don't have any case reports </Text>
                     </View>
                     <TouchableOpacity onPress={handleOpenModal} style={{alignItems:'center', justifyContent:"center"}} >
                             <View style={styles.submitCode} >
-                                <Text>Make Case Reports</Text>
+                                <Text style={{fontFamily:"Georgia"}}>Make Case Reports</Text>
                             </View>
                             <MakeReportModal openModal={openModal} closeModal={handleCloseModal} />
                     </TouchableOpacity> 
@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
     },
     headerText:{
         fontWeight:'bold', 
-        fontSize:30
+        fontSize:30,
+        fontFamily:"Georgia"
     },
     headerView:{
          

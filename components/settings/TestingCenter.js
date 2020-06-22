@@ -56,10 +56,10 @@ export default function TestingCenters({closeModal, showModal}){
                 <View style={styles.venueContainer}>
                     <View>
                         <Text style={styles.medium}>University of Ghana Medical School</Text>
-                        <Text style={{color:colors.grey, fontWeight:'600', paddingTop:6}} >Accra, Ghana</Text>
+                        <Text style={{color:colors.grey, fontWeight:'600', paddingTop:6,fontFamily:"Georgia"}} >Accra, Ghana</Text>
                     </View>
                     <TouchableOpacity onPress={handleGetDirections}  >
-                         <Text style={{color:colors.tomato, fontWeight:'500'}}>Get Directions</Text>
+                         <Text style={{color:colors.tomato, fontWeight:'500',fontFamily:"Georgia"}}>Get Directions</Text>
                     </TouchableOpacity>
                 </View>
              </View> 
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
       headerTitle: {
         letterSpacing: -0.2,
         fontSize: font_sizes.h1,
+        fontFamily:"Georgia"
       },
       venueContainer:{
           flexDirection:'row',
@@ -91,5 +92,6 @@ const styles = StyleSheet.create({
       medium: {
         letterSpacing: -0.3,
         fontSize: font_sizes.t3,
+        fontFamily:"Georgia"
       },
 })

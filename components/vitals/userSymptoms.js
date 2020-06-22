@@ -145,8 +145,10 @@ const styles = StyleSheet.create({
   date: {
     letterSpacing: -0.3,
     padding: 15,
+    fontFamily:"Georgia"
   },
   text: {
     letterSpacing: -0.3,
+    fontFamily:"Georgia"
   },
 });

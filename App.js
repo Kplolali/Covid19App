@@ -1,12 +1,14 @@
 
 import 'react-native-gesture-handler';
-import * as React from 'react';
+import React, { useState }  from 'react';
 import {View, Text, TouchableOpacity} from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator} from '@react-navigation/stack'
 import { createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import { ApolloProvider } from '@apollo/react-hooks'
 import ApolloClient from 'apollo-boost'
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
 
 // necessary imports
 import Cover from './screens/covers'
@@ -70,7 +72,38 @@ const MainSectionTab = ()=>{
 
 const Stack = createStackNavigator();
 
-export default function App(){
+export default function App(props){
+  const [isLoadingComplete, setLoadingComplete] = useState(false);
+  async function loadResourceAsync() {
+    await Promise.all([
+   
+      Font.loadAsync({
+        // fonts used
+        'Georgia': require('./assets/fonts/Georgia-Regular.ttf'),
+        'Georgia-Bold': require('./assets/fonts/georgia-bold.ttf'),
+        
+      }),
+    ]);
+  }
+
+  function handleLoadingError(error) {
+    // show error
+    console.log(error);
+  }
+
+  function handleFinishLoading(setLoadingComplete) {
+    setLoadingComplete(true);
+  }
+
+  if (!isLoadingComplete && !props.skipLoadingScreen) {
+    return (
+      <AppLoading
+        startAsync={loadResourceAsync}
+        onError={handleLoadingError}
+        onFinish={() => handleFinishLoading(setLoadingComplete)}
+      />
+    );
+  } else {
 
   const client = new ApolloClient({
     uri:'https://covid19-graphql.netlify.app/'
@@ -100,4 +133,5 @@ export default function App(){
     
     </ApolloProvider>
   )
+}
 }

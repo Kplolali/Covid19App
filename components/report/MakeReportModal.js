@@ -54,13 +54,13 @@ const MakeReportModal = ({openModal, closeModal, navigation}) => {
                         <TouchableOpacity>
                             <Ionicons color="#e3e3e3" name="ios-checkmark-circle" size={21} />
                         </TouchableOpacity>
-                        <Text style={{paddingLeft:5}}>Self</Text>
+                        <Text style={{paddingLeft:5, fontFamily:"Georgia"}}>Self</Text>
                     </View>
                     <View style={{flexDirection:"row"}}>
                         <TouchableOpacity>
                                 <Ionicons color="#e3e3e3" name="ios-checkmark-circle" size={21} />    
                         </TouchableOpacity>
-                        <Text style={{paddingLeft:5}}>Other Individual</Text>
+                        <Text style={{paddingLeft:5, fontFamily:"Georgia"}}>Other Individual</Text>
                     </View>
                     {/* Location */}
                </View>
@@ -73,6 +73,7 @@ const MakeReportModal = ({openModal, closeModal, navigation}) => {
                        borderWidth:StyleSheet.hairlineWidth, 
                        borderColor:"#e3e3e3",
                        padding:5,
+                       fontFamily:"Georgia"
                     }}/>
                 </View>
                 {/* Landmark */}
@@ -89,6 +90,7 @@ const MakeReportModal = ({openModal, closeModal, navigation}) => {
                        borderWidth:StyleSheet.hairlineWidth, 
                        borderColor:"#e3e3e3",
                        padding:10,
+                       fontFamily:"Georgia"
                     }}/>
                     {/* Alternate Contact */}
                     <TextInput 
@@ -112,6 +114,7 @@ const MakeReportModal = ({openModal, closeModal, navigation}) => {
                        borderWidth:StyleSheet.hairlineWidth, 
                        borderColor:"#e3e3e3",
                        padding:5,
+                       fontFamily:"Georgia"
                     }}/>
                 </View>
                 {/* Button */}
@@ -120,7 +123,7 @@ const MakeReportModal = ({openModal, closeModal, navigation}) => {
                     <ActivityIndicator />
                         ) : (
                     <View style={styles.Button} >
-                        <Text style={{color: "#fff"}} >Report Case</Text>
+                        <Text style={{color: "#fff",fontFamily:"Georgia"}} >Report Case</Text>
                     </View>
                         )}
                 </TouchableOpacity>
@@ -137,11 +140,13 @@ const styles = StyleSheet.create({
     },
     headerTitle:{
         fontSize:30,
-        fontWeight:'bold'
+        fontWeight:'bold',
+        fontFamily:"Georgia"
     },
     title:{
         fontWeight:"bold",
-        paddingVertical:15
+        paddingVertical:15,
+        fontFamily:"Georgia"
     },
     View:{
         flexDirection:"row", 

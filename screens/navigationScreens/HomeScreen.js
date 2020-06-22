@@ -96,7 +96,8 @@ const styles = StyleSheet.create({
     },
     headerText:{
         fontWeight:'bold', 
-        fontSize:30
+        fontSize:30,
+        fontFamily:"Georgia"
     },
     headerView:{   
         paddingHorizontal:10,
@@ -119,7 +120,8 @@ const styles = StyleSheet.create({
         color:'#fff',
         letterSpacing:-0.3,
         fontSize:30,
-        fontWeight:"bold"
+        fontWeight:"bold",
+        fontFamily:"Georgia"
     },
     name:{
         position:'absolute',
@@ -127,17 +129,20 @@ const styles = StyleSheet.create({
         top:55,
         color:'#fff',
         letterSpacing:-0.1, 
-        fontWeight:"bold"
+        fontWeight:"bold",
+        fontFamily:"Georgia"
     },
     mainText:{
         fontWeight:'bold',
         fontSize:16,
-        letterSpacing:-0.4
+        letterSpacing:-0.4,
+        fontFamily:"Georgia"
     },
     date:{
         fontSize:11,
         color:'grey',
-        fontWeight:'600'
+        fontWeight:'600',
+        fontFamily:"Georgia"
     }
  
   });

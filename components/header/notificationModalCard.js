@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from 'react-native';
 
 
 
-export default function sectionsCard({ main, text }) {
+export default function NotificationCard({ main, text }) {
   return (
       <View style={{paddingHorizontal:26,paddingVertical:25}}>
         <View  style={styles.body}>
@@ -26,10 +26,12 @@ const styles = StyleSheet.create({
   Text: {
     letterSpacing: -0.3,
     fontSize: 15,
+    fontFamily:"Georgia"
   },
   text: {
     letterSpacing: -0.3,
     fontSize: 8,
+    fontFamily:"Georgia"
   }
 
 });
