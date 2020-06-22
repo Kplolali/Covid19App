@@ -112,7 +112,7 @@ export default function SettingsScreen({navigation}){
                 <TouchableOpacity onPress={() => setShowWorld(true)} style={styles.cardContainer} >
                         <View style={styles.body}>
                         <View>
-                            <Text style={styles.mainText}>Worldwide Statisticks</Text>
+                            <Text style={styles.mainText}>Worldwide Statistics</Text>
                             <Text style={styles.subText}>Check worldwide stats</Text>
                         </View>
                         <Ionicons name='ios-arrow-forward' size={25} />

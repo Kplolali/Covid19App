@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { View, Text, StyleSheet, ActivityIndicator, TouchableOpacity } from 'react-native';
-import {  ScrollView } from 'react-native-gesture-handler';
+import { View, Text, StyleSheet, ActivityIndicator, TouchableOpacity, ScrollView } from 'react-native';
+
 import { GlobalContext } from '../../states/states';
 
 const Card = ({ value, sign, handleSelect, idOfSymptom, valueData, selectStatus }) => {
@@ -75,8 +75,8 @@ export default function LogSymptoms() {
   }
 
   return (
-    <>
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <View>
+    <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ paddingTop: 10 }}>
           {symptoms.map(symptom => (
             <View key={symptom.id} style={styles.container}>
@@ -105,17 +105,20 @@ export default function LogSymptoms() {
         {/* Button */}
       <TouchableOpacity onPress={submit} style={styles.button}>
         {load ? (
-          <ActivityIndicator color="black" />
+        <ActivityIndicator color="black" />
         ):(
           <Text style={([styles.description], { color: 'white' })}>
-            Log Vitals
+                Log Vitals
           </Text>
-        )}
-     
+          )}
+                
       </TouchableOpacity>
+        
       </ScrollView>
+    
+
+    </View>
       
-    </>
   );
 }
 

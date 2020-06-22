@@ -12,13 +12,16 @@ import colors from '../../constants/colors';
 
 
 export default function CaseReports({ reportFor, contact, description, date }) {
-  const [visible, setVisible] = useState(false);
+  const [openModal, setopenModal] = useState(false);
   const isFocused = useIsFocused();
 
-  function close() {
-    setVisible(false);
-  }
+  function handleOpenModal(){
+    setopenModal(true)
+}
 
+function handleCloseModal(){
+    setopenModal(false)
+}
   function rightActions(dragX, index) {
     const scale = dragX.interpolate({
       inputRange: [-100, 0],
@@ -69,7 +72,7 @@ export default function CaseReports({ reportFor, contact, description, date }) {
         </View>
       </Swipeable>
       <FAB
-        onClickAction={() => setVisible(true)}
+        onClickAction={() => setopenModal(true)}
         style={{
           position: 'absolute',
           width: 65,
@@ -81,7 +84,7 @@ export default function CaseReports({ reportFor, contact, description, date }) {
         visible={isFocused}
         iconTextComponent={<Ionicons name="ios-add" />}
       />
-      <ReportModal visible={visible} close={close} />
+      <ReportModal openModal={openModal} closeModal={handleCloseModal} />
     </View>
   );
 }

@@ -6,12 +6,10 @@ import {
     ScrollView,
     SafeAreaView, 
     FlatList, 
-    Image,
-    StyleSheet,
-    TouchableOpacity
+    Image
 } from 'react-native'
-import Constants from 'expo-constants'
-import { Ionicons } from '@expo/vector-icons'
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import {EvilIcons} from '@expo/vector-icons'
 
 
 const ListItem = ({name, flag, select, data})=>{
@@ -32,7 +30,7 @@ const ListItem = ({name, flag, select, data})=>{
   }
 
 
-export default function WorldData({showModal, closeModal, SelectedTeam}){
+export default function WorldData({showModal, closeModal, SelectedCountry}){
   
     const [data, setData] = React.useState(null)
     const [loading, setLoading] = React.useState(true)
@@ -56,45 +54,53 @@ export default function WorldData({showModal, closeModal, SelectedTeam}){
                                     iso3
                                     iso2
                                 }
+                                result{
+                                  cases
+                                  critical
+                                  deaths
+                                  recovered
+                                  active
+                                  tests
+                                }
                             }
                         }
                     `
                     })
                 })
                 let json = await response.json();
-                console.log(json.data.countries)
+               
                 setData(json.data.countries)
-                setLoading(!loading)
+                setLoading(false)
            }
            fetchData()
     }, [])
 
     return(
         <SafeAreaView>
-            <Modal visible={showModal} presentationStyle='pageSheet' animationType='fade' >
+            <Modal visible={showModal} animationType="slide">
                 {
                     loading ?
-                    <View style={styles.container}>
-                        <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-                            <Text style={{fontSize:34, fontWeight:'bold'}}>World Statistics</Text>
-                            <TouchableOpacity onPress={closeModal}>
-                                <Ionicons name='ios-close' size={28} />
-                            </TouchableOpacity>
-
-                        </View>
+                    <View style={{flex: 1, justifyContent: "center", alignItems: 'center',}}>
+                        <Text> </Text>
                     </View> 
                     :
-                    <View style={styles.container}>
+                    <View style={{marginTop: 30, flex: 1}}>
+
                         <TouchableOpacity onPress={closeModal}>
-                                <Ionicons name='ios-close' size={28} />
-                            </TouchableOpacity>
+                            <View style={{margin: 15, paddingHorizontal: 10}}>
+                                <EvilIcons
+                                    name="close"
+                                    size={20}
+                                />
+                            </View>
+                        </TouchableOpacity>
 
                         <ScrollView style={{padding: 10, }}>
                         <FlatList
                                 data={data}
                                 renderItem={({item})=> <ListItem {...item} data={item} name={item.country} flag={{uri: item.countryInfo.flag}} select={data=>{
-                                    SelectedTeam({...data})
-                                    close()
+                                    SelectedCountry({...data})
+                                    closeModal()
                                 }}/>}
                             />  
                         </ScrollView>
@@ -106,10 +112,3 @@ export default function WorldData({showModal, closeModal, SelectedTeam}){
         </SafeAreaView>
     )
 }
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        paddingTop:Constants.statusBarHeight,
-        paddingHorizontal:10
-    }
-})
