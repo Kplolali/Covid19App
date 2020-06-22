@@ -1,15 +1,17 @@
-import React,{useState} from 'react';
+import React,{useState, useContext} from 'react';
 import { View, Text,  StyleSheet, TextInput,TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Lottie from 'lottie-react-native'
 
 import Header from '../../components/header/header'
 import VitalsModal from '../../components/vitals/VitalsModal';
-import load from '../../assets/lottie/heart-cardio.json'
+import load from '../../assets/lottie/heart-cardio.json';
+import UserSymptoms from '../../components/vitals/userSymptoms';
+import { GlobalContext } from '../../states/states';
 
 export default function VitalsScreen({navigation}){
-
     const [openModal, setopenModal] = useState(false);
+    const { userVitals } = useContext(GlobalContext);
 
     function handleOpenModal(){
         setopenModal(true)
@@ -25,24 +27,39 @@ export default function VitalsScreen({navigation}){
                 <View style={styles.headerView}>
                     <Text style={styles.headerText}>Vitals</Text>
                 </View>
-                <Lottie
-                source= { load } 
-                autoPlay 
-                loop
-                style={{alignItems:"center", width:70, height:140, marginLeft:25, marginVertical:15, marginBottom:"20%"}}
-                />
-                <View style={{justifyContent:"center", alignItems:"center"}}>
-                    <Text>You have not logged your vitals yet</Text>
-                </View>
-                <TouchableOpacity onPress={handleOpenModal} style={{alignItems:'center', justifyContent:"center"}} >
-                        <View style={styles.submitCode} >
-                            <Text>Log Vitals</Text>
+                      {/* Check if user vitals array is empty */}
+
+                    {userVitals.length > 0 ? (
+                        <View>
+                        <UserSymptoms userVitals={userVitals} />
                         </View>
-                        <VitalsModal openModal={openModal} closeModal={handleCloseModal} />
-            </TouchableOpacity>
-            </View>
-            
-            
+                    ) : (
+                        <Text />
+                    )}
+
+                    {userVitals.length <= 0 ? (
+                <View>
+                    <Lottie
+                    source= { load } 
+                    autoPlay 
+                    loop
+                    style={{alignItems:"center", width:70, height:140, marginLeft:25, marginVertical:15, marginBottom:"20%"}}
+                    />
+                    <View style={{justifyContent:"center", alignItems:"center"}}>
+                        <Text>You have not logged your vitals yet</Text>
+                    </View>
+                    <TouchableOpacity onPress={handleOpenModal} style={{alignItems:'center', justifyContent:"center"}} >
+                            <View style={styles.submitCode} >
+                                <Text>Log Vitals</Text>
+                            </View>
+                            <VitalsModal openModal={openModal} closeModal={handleCloseModal} />
+                    </TouchableOpacity>
+                </View>
+                
+              ) : (
+                <Text />
+              )}
+            </View>     
         </View>
     )
 }
